@@ -7,7 +7,7 @@ package me.minotopia.statsd_bukkit;
  * <p>Four key methods are provided for the submission of data-points for the application under
  * scrutiny:
  * <ul>
- * <li>{@link #incrementCounter} - adds one to the value of the specified named counter</li>
+ * <li>{@link #count} - adds one to the value of the specified named counter</li>
  * <li>{@link #recordGaugeValue} - records the latest fixed value for the specified named gauge</li>
  * <li>{@link #recordExecutionTime} - records an execution time in milliseconds for the specified named operation</li>
  * <li>{@link #recordSetEvent} - records an occurrence of the specified named event</li>

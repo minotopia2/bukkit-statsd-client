@@ -17,7 +17,7 @@ import java.util.Locale;
  * <p>Three key methods are provided for the submission of data-points for the application under
  * scrutiny:
  * <ul>
- * <li>{@link #incrementCounter} - adds one to the value of the specified named counter</li>
+ * <li>{@link #count} - adds one to the value of the specified named counter</li>
  * <li>{@link #recordGaugeValue} - records the latest fixed value for the specified named gauge</li>
  * <li>{@link #recordExecutionTime} - records an execution time in milliseconds for the specified named operation</li>
  * </ul>
@@ -50,7 +50,7 @@ public final class NonBlockingStatsDClient extends ConvenienceMethodProvidingSta
      * @param prefix   the prefix to apply to keys sent via this client (can be null or empty for no prefix)
      * @param hostname the host name of the targeted StatsD server
      * @param port     the port of the targeted StatsD server
-     * @param plugin
+     * @param plugin   the plugin to use for registering the tasks to save data
      * @throws StatsDClientException if the client could not be started
      */
     public NonBlockingStatsDClient(String prefix, String hostname, int port, Plugin plugin) throws StatsDClientException {
@@ -72,6 +72,7 @@ public final class NonBlockingStatsDClient extends ConvenienceMethodProvidingSta
      * @param hostname     the host name of the targeted StatsD server
      * @param port         the port of the targeted StatsD server
      * @param errorHandler handler to use when an exception occurs during usage
+     * @param plugin       the plugin to use for registering the tasks to save data
      * @throws StatsDClientException if the client could not be started
      */
     public NonBlockingStatsDClient(String prefix, String hostname, int port, Plugin plugin, StatsDClientErrorHandler errorHandler) throws StatsDClientException {
@@ -84,29 +85,11 @@ public final class NonBlockingStatsDClient extends ConvenienceMethodProvidingSta
         }
     }
 
-    /**
-     * Adjusts the specified counter by a given delta.
-     *
-     * <p>This method is non-blocking and is guaranteed not to throw an exception.</p>
-     *
-     * @param aspect     the name of the counter to adjust
-     * @param delta      the amount to adjust the counter by
-     * @param sampleRate the sampling rate being employed. For example, a rate of 0.1 would tell StatsD that this
-     *                   counter is being sent sampled every 1/10th of the time.
-     */
     @Override
     public void count(String aspect, long delta, double sampleRate) {
         send(messageFor(aspect, Long.toString(delta), "c", sampleRate));
     }
 
-    /**
-     * Records the latest fixed value for the specified named gauge.
-     *
-     * <p>This method is non-blocking and is guaranteed not to throw an exception.</p>
-     *
-     * @param aspect the name of the gauge
-     * @param value  the new reading of the gauge
-     */
     @Override
     public void recordGaugeValue(String aspect, long value) {
         recordGaugeCommon(aspect, Long.toString(value), value < 0, false);
