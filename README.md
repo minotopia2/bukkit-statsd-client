@@ -1,20 +1,28 @@
-java-statsd-client
-==================
+bukkit-statsd-client
+====================
 
-[![Build Status](https://travis-ci.org/tim-group/java-statsd-client.svg?branch=master)](https://travis-ci.org/tim-group/java-statsd-client)
+[![Build Status](https://ci.minotopia.me/buildStatus/icon?job=public~bukkit-statsd-client)](https://ci.minotopia.me/job/public~bukkit-statsd-client)
 
-A statsd client library implemented in Java.  Allows for Java applications to easily communicate with statsd.
+A statsd client library implemented in Java. Allows for Bukkit plugins to easily communicate with statsd. 
+Fork of [tim-group/java-statsd-client](https://github.com/tim-group/java-statsd-client).
 
 Downloads
 ---------
-The client jar is distributed via maven central, and can be downloaded [here](http://search.maven.org/#search%7Cga%7C1%7Cg%3Acom.timgroup%20a%3Ajava-statsd-client).
-
+The client jar is distributed via a custom Maven repository.
 ```xml
-<dependency>
-    <groupId>com.timgroup</groupId>
-    <artifactId>java-statsd-client</artifactId>
-    <version>3.0.1</version>
-</dependency>
+<repositories>
+  <repository>
+    <id>xxyy-repo</id>
+    <url>https://repo.l1t.li/public-all/</url>
+  </repository>
+</repositories>
+<dependencies>
+  <dependency>
+    <groupId>me.minotopia</groupId>
+    <artifactId>bukkit-statsd-client</artifactId>
+    <version>1.0.1</version>
+  </dependency>
+</dependencies>
 ```
 
 Usage
