@@ -27,7 +27,7 @@
 
 
     <properties>
-        <build.sourceEncoding>UTF-8</build.sourceEncoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <ignoreSnapshots>true</ignoreSnapshots> <!-- maven-release-plugin -->
