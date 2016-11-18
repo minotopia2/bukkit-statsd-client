@@ -15,13 +15,13 @@ import java.util.Locale;
  * </p>
  *
  * <p>Three key methods are provided for the submission of data-points for the application under
- * scrutiny:
+ * scrutiny:</p>
  * <ul>
  * <li>{@link #count} - adds one to the value of the specified named counter</li>
  * <li>{@link #recordGaugeValue} - records the latest fixed value for the specified named gauge</li>
  * <li>{@link #recordExecutionTime} - records an execution time in milliseconds for the specified named operation</li>
  * </ul>
- * From the perspective of the application, these methods are non-blocking, with the resulting
+ * <p>From the perspective of the application, these methods are non-blocking, with the resulting
  * IO operations being carried out in a separate thread. Furthermore, these methods are guaranteed
  * not to throw an exception which may disrupt application execution.
  * </p>
