@@ -8,7 +8,6 @@ package com.timgroup.statsd;
  *
  */
 public final class NoOpStatsDClient extends ConvenienceMethodProvidingStatsDClient {
-    @Override public void stop() { }
     @Override public void count(String aspect, long delta, double sampleRate) { }
     @Override public void recordGaugeValue(String aspect, long value) { }
     @Override public void recordGaugeValue(String aspect, double value) { }

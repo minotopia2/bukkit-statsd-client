@@ -6,6 +6,7 @@ package com.timgroup.statsd;
  * @author Tom Denley
  *
  */
+@FunctionalInterface
 public interface StatsDClientErrorHandler {
 
     /**
