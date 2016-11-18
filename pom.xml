@@ -6,18 +6,6 @@
     <groupId>me.minotopia</groupId>
     <artifactId>bukkit-statsd-client</artifactId>
     <version>1.0.1-SNAPSHOT</version>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
     <packaging>jar</packaging>
     <description>A tiny library allowing Bukkit plugins to communicate with statsd instances easily.</description>
@@ -42,6 +30,7 @@
         <project.sourceEncoding>UTF-8</project.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <ignoreSnapshots>true</ignoreSnapshots> <!-- maven-release-plugin -->
     </properties>
 
     <repositories>
@@ -75,4 +64,14 @@
             <version>1.3</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.0</version>
+            </plugin>
+        </plugins>
+    </build>
 </project>

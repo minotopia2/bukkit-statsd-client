@@ -46,11 +46,6 @@ public interface StatsDClient {
      *
      * @param aspect the name of the counter to increment
      */
-    void incrementCounter(String aspect);
-
-    /**
-     * Convenience method equivalent to {@link #incrementCounter(String)}.
-     */
     void increment(String aspect);
 
     /**
@@ -59,11 +54,6 @@ public interface StatsDClient {
      * <p>This method is non-blocking and is guaranteed not to throw an exception.</p>
      *
      * @param aspect the name of the counter to decrement
-     */
-    void decrementCounter(String aspect);
-
-    /**
-     * Convenience method equivalent to {@link #decrementCounter(String)}.
      */
     void decrement(String aspect);
 
@@ -78,7 +68,12 @@ public interface StatsDClient {
     void recordGaugeValue(String aspect, long value);
 
     /**
-     * Convenience method equivalent to {@link #recordGaugeValue(String, long)} but for double values.
+     * Records the latest fixed value for the specified named gauge.
+     *
+     * <p>This method is non-blocking and is guaranteed not to throw an exception.</p>
+     *
+     * @param aspect the name of the gauge
+     * @param value  the new reading of the gauge
      */
     void recordGaugeValue(String aspect, double value);
 
@@ -93,7 +88,12 @@ public interface StatsDClient {
     void recordGaugeDelta(String aspect, long delta);
 
     /**
-     * Convenience method equivalent to {@link #recordGaugeDelta(String, long)} but for double deltas.
+     * Records a change in the value of the specified named gauge.
+     *
+     * <p>This method is non-blocking and is guaranteed not to throw an exception.</p>
+     *
+     * @param aspect the name of the gauge
+     * @param delta  the +/- delta to apply to the gauge
      */
     void recordGaugeDelta(String aspect, double delta);
 
