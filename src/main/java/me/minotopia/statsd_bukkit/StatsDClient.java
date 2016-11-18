@@ -98,12 +98,22 @@ public interface StatsDClient {
     void recordGaugeDelta(String aspect, double delta);
 
     /**
-     * Convenience method equivalent to {@link #recordGaugeValue(String, long)}.
+     * Records the latest fixed value for the specified named gauge.
+     *
+     * <p>This method is non-blocking and is guaranteed not to throw an exception.</p>
+     *
+     * @param aspect the name of the gauge
+     * @param value  the new reading of the gauge
      */
     void gauge(String aspect, long value);
 
     /**
-     * Convenience method equivalent to {@link #recordGaugeValue(String, double)}.
+     * Records the latest fixed value for the specified named gauge.
+     *
+     * <p>This method is non-blocking and is guaranteed not to throw an exception.</p>
+     *
+     * @param aspect the name of the gauge
+     * @param value  the new reading of the gauge
      */
     void gauge(String aspect, double value);
 
@@ -119,7 +129,13 @@ public interface StatsDClient {
     void recordSetEvent(String aspect, String eventName);
 
     /**
-     * Convenience method equivalent to {@link #recordSetEvent(String, String)}.
+     * StatsD supports counting unique occurrences of events between flushes, Call this method to records an occurrence
+     * of the specified named event.
+     *
+     * <p>This method is non-blocking and is guaranteed not to throw an exception.</p>
+     *
+     * @param aspect    the name of the set
+     * @param eventName the value to be added to the set
      */
     void set(String aspect, String eventName);
 
@@ -134,12 +150,12 @@ public interface StatsDClient {
     void recordExecutionTime(String aspect, long timeInMs);
 
     /**
-     * Adjusts the specified counter by a given delta.
+     * Records an execution time.
      *
      * <p>This method is non-blocking and is guaranteed not to throw an exception.</p>
      *
-     * @param aspect     the name of the counter to adjust
-     * @param timeInMs   the amount to adjust the counter by
+     * @param aspect     the name of the stat to save to
+     * @param timeInMs   the execution time in milliseconds
      * @param sampleRate the sampling rate being employed. For example, a rate of 0.1 would tell StatsD that this timer
      *                   is being sent sampled every 1/10th of the time, so that it updates its timer_counters
      *                   appropriately.
@@ -159,8 +175,14 @@ public interface StatsDClient {
     void recordExecutionTimeToNow(String aspect, long systemTimeMillisAtStart);
 
     /**
-     * Convenience method equivalent to {@link #recordExecutionTime(String, long)}.
+     * Records an execution time.
+     *
+     * <p>This method is non-blocking and is guaranteed not to throw an exception.</p>
+     *
+     * @param aspect     the name of the stat to save to
+     * @param timeInMs   the execution time in milliseconds
+     *                   appropriately.
      */
-    void time(String aspect, long value);
+    void time(String aspect, long timeInMs);
 
 }
