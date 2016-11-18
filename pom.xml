@@ -19,6 +19,14 @@
         </license>
     </licenses>
 
+    <distributionManagement>
+        <downloadUrl>https://ci.minotopia.me/job/public~bukkit-statsd-client</downloadUrl>
+        <repository>
+            <id>xxyy-repo</id>
+            <url>https://repo.l1t.li/xxyy-public/</url>
+        </repository>
+    </distributionManagement>
+
     <scm>
         <url>https://github.com/minotopiame/bukkit-statsd-client</url>
         <connection>scm:git:git://github.com/minotopiame/bukkit-statsd-client.git</connection>
