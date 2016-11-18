@@ -5,7 +5,7 @@
 
     <groupId>me.minotopia</groupId>
     <artifactId>bukkit-statsd-client</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <build>
         <plugins>
             <plugin>
