@@ -29,7 +29,7 @@
 
     <scm>
         <url>https://github.com/minotopiame/bukkit-statsd-client</url>
-        <connection>scm:git:git://github.com/minotopiame/bukkit-statsd-client.git</connection>
+        <connection>scm:git:git@github.com:minotopiame/bukkit-statsd-client.git</connection>
         <tag>HEAD</tag>
     </scm>
 
