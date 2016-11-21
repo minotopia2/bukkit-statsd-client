@@ -20,7 +20,7 @@ The client jar is distributed via a custom Maven repository.
   <dependency>
     <groupId>me.minotopia</groupId>
     <artifactId>bukkit-statsd-client</artifactId>
-    <version>1.0.1</version>
+    <version>1.1.0</version>
   </dependency>
 </dependencies>
 ```
