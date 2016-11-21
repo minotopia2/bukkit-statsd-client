@@ -22,8 +22,6 @@ public final class NonBlockingUdpSender {
     }
 
     public void send(final String message) {
-        if (plugin.isEnabled()) {
-            sendTask.queue(message.getBytes(encoding));
-        }
+        sendTask.queue(message.getBytes(encoding));
     }
 }
