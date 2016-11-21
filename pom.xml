@@ -3,7 +3,7 @@
 
     <groupId>me.minotopia</groupId>
     <artifactId>bukkit-statsd-client</artifactId>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>1.1.0</version>
 
     <packaging>jar</packaging>
     <description>A tiny library allowing Bukkit plugins to communicate with statsd instances easily.</description>
@@ -28,7 +28,7 @@
     <scm>
         <url>https://github.com/minotopiame/bukkit-statsd-client</url>
         <connection>scm:git:git@github.com:minotopiame/bukkit-statsd-client.git</connection>
-        <tag>HEAD</tag>
+        <tag>bukkit-statsd-client-1.1.0</tag>
     </scm>
 
 
