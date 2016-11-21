@@ -28,7 +28,7 @@ import java.util.Locale;
  *
  * @author Tom Denley
  */
-public final class NonBlockingStatsDClient extends ConvenienceMethodProvidingStatsDClient {
+public class NonBlockingStatsDClient extends ConvenienceMethodProvidingStatsDClient {
 
     private static final Charset STATS_D_ENCODING = Charset.forName("UTF-8");
 
